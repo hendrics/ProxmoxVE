@@ -46,7 +46,7 @@ fi
 msg_info "Installing Omada Controller"
 OMADA_URL=$(curl -fsSL "https://support.omadanetworks.com/en/download/software/omada-controller/" |
   grep -o 'https://static\.tp-link\.com/upload/software/[^"]*linux_x64[^"]*\.deb' |
-  grep -o 'v5' |
+  grep 'v5' |
   head -n1)
 OMADA_PKG=$(basename "$OMADA_URL")
 curl -fsSL "$OMADA_URL" -o "$OMADA_PKG"
