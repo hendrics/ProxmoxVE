@@ -49,7 +49,7 @@ function update_script() {
   msg_info "Updating Omada Controller"
   OMADA_URL=$(curl -fsSL "https://support.omadanetworks.com/en/download/software/omada-controller/" |
     grep -o 'https://static\.tp-link\.com/upload/software/[^"]*linux_x64[^"]*\.deb' |
-    grep -o 'v5' |
+    grep 'v5' |
     head -n1)
   OMADA_PKG=$(basename "$OMADA_URL")
   if [ -z "$OMADA_PKG" ]; then
